@@ -27,11 +27,11 @@ public class NativeConnector extends CordovaPlugin {
             try{
                 String text1 = args.getJSONObject(0).getString("param1");
                 callback.success(text1);
-            }catch(Excaption ex){
+            }catch(Exception ex){
                 callback.error("I don't Know" + ex);
             }
         }else{
-            callback.error('Please Insert PLEASEEEEEE!');
+            callback.error("Please Insert PLEASEEEEEE!");
         }
     }
 }
