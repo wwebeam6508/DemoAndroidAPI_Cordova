@@ -2,7 +2,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-nativeconnector" version="1.0.0">
    <name>NativeConnector</name>
    <js-module name="NativeConnector" src="www/NativeConnector.js">
-      <clobbers target="cordova.plugins.NativeConnector" />
+      <clobbers target="NativeConnector" />
    </js-module>
    <platform name="android">
       <config-file parent="/*" target="res/xml/config.xml">
@@ -11,6 +11,6 @@
          </feature>
       </config-file>
       <config-file parent="/*" target="AndroidManifest.xml" />
-      <source-file src="src/android/NativeConnector.java" target-dir="src/cordova.plugin.nativeconnector/NativeConnector" />
+      <source-file src="src/android/NativeConnector.java" target-dir="src/cordova/plugin/nativeconnector/NativeConnector" />
    </platform>
 </plugin>
