@@ -11,6 +11,6 @@
          </feature>
       </config-file>
       <config-file parent="/*" target="AndroidManifest.xml" />
-      <source-file src="src/android/NativeConnector.java" target-dir="src/cordova-plugin-nativeconnector/NativeConnector" />
+      <source-file src="src/android/NativeConnector.java" target-dir="src/cordova.plugin.nativeconnector/NativeConnector" />
    </platform>
 </plugin>
