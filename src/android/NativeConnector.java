@@ -1,4 +1,4 @@
-package cordova-plugin-nativeconnector;
+package cordova.plugin.nativeconnector;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
