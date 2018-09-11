@@ -1,4 +1,4 @@
-package cordova.plugin.nativeconnector;
+package cordova-plugin-nativeconnector;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
@@ -27,11 +27,11 @@ public class NativeConnector extends CordovaPlugin {
             try{
                 String text1 = args.getJSONObject(0).getString("param1");
                 callback.success(text1);
-            }catch(Exception ex){
+            }catch(Excaption ex){
                 callback.error("I don't Know" + ex);
             }
         }else{
-            callback.error("Please Insert PLEASEEEEEE!");
+            callback.error('Please Insert PLEASEEEEEE!');
         }
     }
 }
