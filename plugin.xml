@@ -31,7 +31,9 @@
       <source-file src="src/android/example/howen_test/VideoActivity.java" target-dir="src/cordova/plugin/example/howen_test" />
       <!-- sockettest -->
       <source-file src="src/android/example/sockettest/SocketActivity.java" target-dir="src/cordova/plugin/example/sockettest" />
-      <source-file src="src/android/example/sockettest/TcpClient" target-dir="src/cordova/plugin/example/sockettest" />
+      <source-file src="src/android/example/sockettest/SocketActivity.java.bak" target-dir="src/cordova/plugin/example/sockettest" />
+      <source-file src="src/android/example/sockettest/TcpClient.java" target-dir="src/cordova/plugin/example/sockettest" />
+      <source-file src="src/android/example/sockettest/TcpClient.java.bak" target-dir="src/cordova/plugin/example/sockettest" />
       <!-- gen -->
       <source-file src="src/android/gen/com/example/yho_test/BuildConfig.java" target-dir="src/cordova/plugin/gen/com/example/yho_test" />
       <source-file src="src/android/gen/com/example/yho_test/R.java" target-dir="src/cordova/plugin/gen/com/example/yho_test" />
