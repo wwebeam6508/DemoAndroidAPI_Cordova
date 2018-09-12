@@ -1,4 +1,5 @@
 package cordova.plugin.nativeconnector;
+import example.howen_test.Gpsdata;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
@@ -6,6 +7,7 @@ import org.apache.cordova.CallbackContext;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 
 /**
  * This class echoes a string called from JavaScript.
@@ -18,6 +20,9 @@ public class NativeConnector extends CordovaPlugin {
         {
             this.sendValue(args, callbackContext);
             return true;
+        }else if(action.equals("getGPSValue")){
+          this.getGPSValue( callbackContext);
+          return true;
         }
         return false;
     }
@@ -33,5 +38,15 @@ public class NativeConnector extends CordovaPlugin {
         }else{
             callback.error("Please Insert PLEASEEEEEE!");
         }
+    }
+
+    private void getGPSValue(CallbackContext callback){
+      Gpsdata gpsdata =  new Gpsdata();
+      try{
+        int lat = gpsdata.Latitude;
+        callback.success(lat);
+      }catch(Exception ex){
+        callback.error("I don't Know" + ex);
+      }
     }
 }
