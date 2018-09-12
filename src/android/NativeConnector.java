@@ -43,8 +43,7 @@ public class NativeConnector extends CordovaPlugin {
     private void getGPSValue(CallbackContext callback){
       Gpsdata gpsdata =  new Gpsdata();
       try{
-        int lat = gpsdata.Latitude;
-        callback.success(lat);
+        callback.success('test');
       }catch(Exception ex){
         callback.error("I don't Know" + ex);
       }
