@@ -33,7 +33,7 @@
       <source-file src="src/android/example/sockettest/SocketActivity.java" target-dir="src/cordova/plugin/example/sockettest/SocketActivity" />
       <source-file src="src/android/example/sockettest/TcpClient.java" target-dir="src/cordova/plugin/example/sockettest/TcpClient" />
       <!-- gen -->
-      <source-file src="src/android/gen/com/yho_test/BuildConfig.java" target-dir="src/cordova/plugin/gen/com/yho_test/BuildConfig" />
+      <source-file src="src/android/gen/com/example/yho_test/BuildConfig.java" target-dir="src/cordova/plugin/gen/com/example/yho_test/BuildConfig" />
       <!-- jhxd -->
       <source-file src="src/android/jhxd/serial/serialService.java" target-dir="src/cordova/plugin/jhxd/serial/serialService" />
       <!-- jni -->
