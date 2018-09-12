@@ -5,5 +5,5 @@ module.exports.sendValue = function (arg0, success, error) {
 };
 
 module.exports.getGPSValue = function ( success, error) {
-    exec(success, error, 'NativeConnector', 'getGPSValue');
+    exec(success, error, 'NativeConnector', 'getGPSValue', []);
 };
