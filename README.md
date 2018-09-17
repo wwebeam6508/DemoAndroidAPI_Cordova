@@ -1,3 +1,3 @@
 # NativeConnector
 
-This Plugin Developed For Xsense Truck
+This Demo Plugin Developed For Xsense Truck
