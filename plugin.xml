@@ -13,62 +13,62 @@
       <config-file parent="/*" target="AndroidManifest.xml" />
       <source-file src="src/android/NativeConnector.java" target-dir="src/cordova/plugin/nativeconnector/NativeConnector" />
       <!-- example -->
-      <source-file src="src/android/example/howen_test/BatteryActivity.java" target-dir="src/cordova/plugin/example/howen_test" />
-      <source-file src="src/android/example/howen_test/CameraActivity.java" target-dir="src/cordova/plugin/example/howen_test" />
-      <source-file src="src/android/example/howen_test/GPIOActivity.java" target-dir="src/cordova/plugin/example/howen_test" />
-      <source-file src="src/android/example/howen_test/Gpsdata.java" target-dir="src/cordova/plugin/example/howen_test" />
-      <source-file src="src/android/example/howen_test/GsmActivity.java" target-dir="src/cordova/plugin/example/howen_test" />
-      <source-file src="src/android/example/howen_test/LocationActivity.java" target-dir="src/cordova/plugin/example/howen_test" />
-      <source-file src="src/android/example/howen_test/MainActivity.java" target-dir="src/cordova/plugin/example/howen_test" />
-      <source-file src="src/android/example/howen_test/MusicActivity.java" target-dir="src/cordova/plugin/example/howen_test" />
-      <source-file src="src/android/example/howen_test/MusicService.java" target-dir="src/cordova/plugin/example/howen_test" />
-      <source-file src="src/android/example/howen_test/RecordActivity.java" target-dir="src/cordova/plugin/example/howen_test" />
-      <source-file src="src/android/example/howen_test/SDCardStatus.java" target-dir="src/cordova/plugin/example/howen_test" />
-      <source-file src="src/android/example/howen_test/SDfileExplorer.java" target-dir="src/cordova/plugin/example/howen_test" />
-      <source-file src="src/android/example/howen_test/SerialPortMain.java" target-dir="src/cordova/plugin/example/howen_test" />
-      <source-file src="src/android/example/howen_test/SpinnerAdapter.java" target-dir="src/cordova/plugin/example/howen_test" />
-      <source-file src="src/android/example/howen_test/TelephonyStatus.java" target-dir="src/cordova/plugin/example/howen_test" />
-      <source-file src="src/android/example/howen_test/VideoActivity.java" target-dir="src/cordova/plugin/example/howen_test" />
+      <source-file src="src/android/example/howen_test/BatteryActivity.java" target-dir="src/com/example/howen_test" />
+      <source-file src="src/android/example/howen_test/CameraActivity.java" target-dir="src/com/example/howen_test" />
+      <source-file src="src/android/example/howen_test/GPIOActivity.java" target-dir="src/com/example/howen_test" />
+      <source-file src="src/android/example/howen_test/Gpsdata.java" target-dir="src/com/example/howen_test" />
+      <source-file src="src/android/example/howen_test/GsmActivity.java" target-dir="src/com/example/howen_test" />
+      <source-file src="src/android/example/howen_test/LocationActivity.java" target-dir="src/com/example/howen_test" />
+      <source-file src="src/android/example/howen_test/MainActivity.java" target-dir="src/com/example/howen_test" />
+      <source-file src="src/android/example/howen_test/MusicActivity.java" target-dir="src/com/example/howen_test" />
+      <source-file src="src/android/example/howen_test/MusicService.java" target-dir="src/com/example/howen_test" />
+      <source-file src="src/android/example/howen_test/RecordActivity.java" target-dir="src/com/example/howen_test" />
+      <source-file src="src/android/example/howen_test/SDCardStatus.java" target-dir="src/com/example/howen_test" />
+      <source-file src="src/android/example/howen_test/SDfileExplorer.java" target-dir="src/com/example/howen_test" />
+      <source-file src="src/android/example/howen_test/SerialPortMain.java" target-dir="src/com/example/howen_test" />
+      <source-file src="src/android/example/howen_test/SpinnerAdapter.java" target-dir="src/com/example/howen_test" />
+      <source-file src="src/android/example/howen_test/TelephonyStatus.java" target-dir="src/com/example/howen_test" />
+      <source-file src="src/android/example/howen_test/VideoActivity.java" target-dir="src/com/example/howen_test" />
       <!-- sockettest -->
-      <source-file src="src/android/example/sockettest/SocketActivity.java" target-dir="src/cordova/plugin/example/sockettest" />
+      <source-file src="src/android/example/sockettest/SocketActivity.java" target-dir="src/com/example/sockettest" />
 
-      <source-file src="src/android/example/sockettest/TcpClient.java" target-dir="src/cordova/plugin/example/sockettest" />
+      <source-file src="src/android/example/sockettest/TcpClient.java" target-dir="src/com/example/sockettest" />
 
       <!-- gen -->
-      <source-file src="src/android/gen/com/example/yho_test/BuildConfig.java" target-dir="src/cordova/plugin/gen/com/example/yho_test" />
-      <source-file src="src/android/gen/com/example/yho_test/R.java" target-dir="src/cordova/plugin/gen/com/example/yho_test" />
+      <source-file src="src/android/gen/com/example/yho_test/BuildConfig.java" target-dir="gen/com/example/yho_test" />
+      <source-file src="src/android/gen/com/example/yho_test/R.java" target-dir="gen/com/example/yho_test" />
       <!-- jhxd -->
-      <source-file src="src/android/jhxd/serial/serialService.java" target-dir="src/cordova/plugin/jhxd/serial" />
+      <source-file src="src/android/jhxd/serial/serialService.java" target-dir="src/com/jhxd/serial" />
       <!-- jni -->
-      <source-file src="src/android/jni/Android.mk" target-dir="src/cordova/plugin/jni" />
-      <source-file src="src/android/jni/Application.mk" target-dir="src/cordova/plugin/jni" />
-      <source-file src="src/android/jni/com_jhxd_serial_serialService.h" target-dir="src/cordova/plugin/jni" />
-      <source-file src="src/android/jni/serial_jni.cpp" target-dir="src/cordova/plugin/jni" />
+      <source-file src="src/android/jni/Android.mk" target-dir="jni" />
+      <source-file src="src/android/jni/Application.mk" target-dir="jni" />
+      <source-file src="src/android/jni/com_jhxd_serial_serialService.h" target-dir="jni" />
+      <source-file src="src/android/jni/serial_jni.cpp" target-dir="jni" />
       <!-- jni_gpio -->
-      <source-file src="src/android/jni_gpio/Android.mk" target-dir="src/cordova/plugin/jni_gpio" />
-      <source-file src="src/android/jni_gpio/rk_pin_array_ctrl.h" target-dir="src/cordova/plugin" />
-      <source-file src="src/android/jni_gpio/native.cpp" target-dir="src/cordova/plugin/jni_gpio" />
+      <source-file src="src/android/jni_gpio/Android.mk" target-dir="jni_gpio" />
+      <source-file src="src/android/jni_gpio/rk_pin_array_ctrl.h" target-dir="jni_gpio" />
+      <source-file src="src/android/jni_gpio/native.cpp" target-dir="jni_gpio" />
       <!-- libs -->
-      <source-file src="src/android/libs/armeabi/libserial_jni.so" target-dir="src/cordova/plugin/libs/armeabi" />
-      <source-file src="src/android/libs/android-support-v4.jar" target-dir="src/cordova/plugin/libs" />
+      <source-file src="src/android/libs/armeabi/libserial_jni.so" target-dir="libs/armeabi" />
+      <source-file src="src/android/libs/android-support-v4.jar" target-dir="libs" />
       <!-- obj -->
-      <source-file src="src/android/obj/local/armeabi/libserial_jni.so" target-dir="src/cordova/plugin/obj/local/armeabi" />
-      <source-file src="src/android/obj/local/armeabi/libstdc++.a" target-dir="src/cordova/plugin/obj/local/armeabi" />
-      <source-file src="src/android/obj/local/armeabi/objs/serial_jni/serial_jni.o" target-dir="src/cordova/plugin/obj/local/armeabi/objs/serial_jni" />
-      <source-file src="src/android/obj/local/armeabi/objs/serial_jni/serial_jni.o.d" target-dir="src/cordova/plugin/obj/local/armeabi/objs/serial_jni" />
-      <source-file src="src/android/obj/local/armeabi-v7a/libserial_jni.so" target-dir="src/cordova/plugin/obj/local/armeabi-v7a" />
-      <source-file src="src/android/obj/local/armeabi-v7a/libstdc++.a" target-dir="src/cordova/plugin/obj/local/armeabi-v7a" />
-      <source-file src="src/android/obj/local/armeabi-v7a/objs/serial_jni/serial_jni.o" target-dir="src/cordova/plugin/obj/local/armeabi-v7a/objs/serial_jni" />
-      <source-file src="src/android/obj/local/armeabi-v7a/objs/serial_jni/serial_jni.o.d" target-dir="src/cordova/plugin/obj/local/armeabi-v7a/objs/serial_jni" />
-      <source-file src="src/android/obj/local/mips/libserial_jni.so" target-dir="src/cordova/plugin/obj/local/mips" />
-      <source-file src="src/android/obj/local/mips/libstdc++.a" target-dir="src/cordova/plugin/obj/local/mips" />
-      <source-file src="src/android/obj/local/mips/objs/serial_jni/serial_jni.o" target-dir="src/cordova/plugin/obj/local/mips/objs/serial_jni" />
-      <source-file src="src/android/obj/local/mips/objs/serial_jni/serial_jni.o.d" target-dir="src/cordova/plugin/obj/local/mips/objs/serial_jni" />
-      <source-file src="src/android/obj/local/x86/libserial_jni.so" target-dir="src/cordova/plugin/obj/local/x86" />
-      <source-file src="src/android/obj/local/x86/libstdc++.a" target-dir="src/cordova/plugin/obj/local/x86" />
-      <source-file src="src/android/obj/local/x86/objs/serial_jni/serial_jni.o" target-dir="src/cordova/plugin/obj/local/x86/objs/serial_jni" />
-      <source-file src="src/android/obj/local/x86/objs/serial_jni/serial_jni.o.d" target-dir="src/cordova/plugin/obj/local/x86/objs/serial_jni" />
+      <source-file src="src/android/obj/local/armeabi/libserial_jni.so" target-dir="obj/local/armeabi" />
+      <source-file src="src/android/obj/local/armeabi/libstdc++.a" target-dir="obj/local/armeabi" />
+      <source-file src="src/android/obj/local/armeabi/objs/serial_jni/serial_jni.o" target-dir="obj/local/armeabi/objs/serial_jni" />
+      <source-file src="src/android/obj/local/armeabi/objs/serial_jni/serial_jni.o.d" target-dir="obj/local/armeabi/objs/serial_jni" />
+      <source-file src="src/android/obj/local/armeabi-v7a/libserial_jni.so" target-dir="obj/local/armeabi-v7a" />
+      <source-file src="src/android/obj/local/armeabi-v7a/libstdc++.a" target-dir="obj/local/armeabi-v7a" />
+      <source-file src="src/android/obj/local/armeabi-v7a/objs/serial_jni/serial_jni.o" target-dir="obj/local/armeabi-v7a/objs/serial_jni" />
+      <source-file src="src/android/obj/local/armeabi-v7a/objs/serial_jni/serial_jni.o.d" target-dir="obj/local/armeabi-v7a/objs/serial_jni" />
+      <source-file src="src/android/obj/local/mips/libserial_jni.so" target-dir="obj/local/mips" />
+      <source-file src="src/android/obj/local/mips/libstdc++.a" target-dir="obj/local/mips" />
+      <source-file src="src/android/obj/local/mips/objs/serial_jni/serial_jni.o" target-dir="obj/local/mips/objs/serial_jni" />
+      <source-file src="src/android/obj/local/mips/objs/serial_jni/serial_jni.o.d" target-dir="obj/local/mips/objs/serial_jni" />
+      <source-file src="src/android/obj/local/x86/libserial_jni.so" target-dir="obj/local/x86" />
+      <source-file src="src/android/obj/local/x86/libstdc++.a" target-dir="obj/local/x86" />
+      <source-file src="src/android/obj/local/x86/objs/serial_jni/serial_jni.o" target-dir="obj/local/x86/objs/serial_jni" />
+      <source-file src="src/android/obj/local/x86/objs/serial_jni/serial_jni.o.d" target-dir="obj/local/x86/objs/serial_jni" />
       <!-- wzh -->
-      <source-file src="src/android/wzh/yho_gpio_operate/gpio_info.java" target-dir="src/cordova/plugin/wzh/yho_gpio_operate" />
+      <source-file src="src/android/wzh/yho_gpio_operate/gpio_info.java" target-dir="src/com/wzh/yho_gpio_operate" />
    </platform>
 </plugin>
