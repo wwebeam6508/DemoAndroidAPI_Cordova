@@ -1,5 +1,5 @@
 package cordova.plugin.nativeconnector;
-import example.howen_test.Gpsdata;
+import com.example.howen_test.SerialPortClass;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
@@ -41,11 +41,12 @@ public class NativeConnector extends CordovaPlugin {
     }
 
     private void getGPSValue(CallbackContext callback){
-      Gpsdata gpsdata =  new Gpsdata();
-      try{
-        callback.success("test");
-      }catch(Exception ex){
-        callback.error("I don't Know" + ex);
+        SerialPortClass serial =  new SerialPortClass();
+        try{
+          serial.open_serialPort();
+          callback.success("test");
+        }catch(Exception ex){
+          callback.error("I don't Know" + ex);
+        }
       }
-    }
 }
