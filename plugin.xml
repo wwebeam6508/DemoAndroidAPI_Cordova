@@ -26,6 +26,7 @@
       <source-file src="src/android/example/howen_test/SDCardStatus.java" target-dir="src/com/example/howen_test" />
       <source-file src="src/android/example/howen_test/SDfileExplorer.java" target-dir="src/com/example/howen_test" />
       <source-file src="src/android/example/howen_test/SerialPortMain.java" target-dir="src/com/example/howen_test" />
+      <source-file src="src/android/example/howen_test/SerialPortClass.java" target-dir="src/com/example/howen_test" />
       <source-file src="src/android/example/howen_test/SpinnerAdapter.java" target-dir="src/com/example/howen_test" />
       <source-file src="src/android/example/howen_test/TelephonyStatus.java" target-dir="src/com/example/howen_test" />
       <source-file src="src/android/example/howen_test/VideoActivity.java" target-dir="src/com/example/howen_test" />
