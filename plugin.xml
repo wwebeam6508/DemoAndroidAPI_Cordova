@@ -32,8 +32,5 @@
       <source-file src="src/android/libs/armeabi-v7a/libserial_jni.so" target-dir="libs/armeabi-v7a" />
       <!-- obj -->
       <source-file src="src/android/obj/local/armeabi-v7a" target-dir="obj/local/armeabi-v7a" />
-      <!-- gradle -->
-      <source-file src="build.gradle" target-dir="." />
-      <!-- end -->
    </platform>
 </plugin>
