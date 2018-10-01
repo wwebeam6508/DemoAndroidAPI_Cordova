@@ -1,6 +1,1 @@
-#APP_ABI := all
-APP_ABI := armeabi
-#		armeabi \
-#		armeabi-v7a \
-#		mips \
-#		x86
+APP_ALLOW_MISSING_DEPS=true

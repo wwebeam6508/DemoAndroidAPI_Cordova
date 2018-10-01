@@ -1,0 +1,4 @@
+#Sat Sep 29 23:44:20 ICT 2018
+base.0=D\:\\project\\TestSerialNat\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\1
+path.0=classes.dex
+renamed.0=classes.dex

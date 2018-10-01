@@ -1,4 +1,5 @@
-# Copyright (C) 2009 The Android Open Source Project
+#
+# Copyright (C) 2008 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,15 +13,35 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-LOCAL_PATH := $(call my-dir)
 
+# This makefile supplies the rules for building a library of JNI code for
+# use by our example of how to bundle a shared library with an APK.
+
+LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
 
-LOCAL_MODULE    := libserial_jni
-LOCAL_PROGUARD_ENABLED:= disabled
-LOCAL_CFLAGS    := -Wno-psabi
-FILE_LIST       := $(wildcard $(LOCAL_PATH)/*.cpp)
-LOCAL_SRC_FILES := $(FILE_LIST:$(LOCAL_PATH)/%=%)
-LOCAL_LDLIBS    := -llog
+LOCAL_MODULE_TAGS := samples
+
+# This is the target being built.
+LOCAL_MODULE:= libgpio_jni
+
+
+# All of the source files that we will compile.
+LOCAL_SRC_FILES:= \
+  native.cpp
+
+# All of the shared libraries we link against.
+LOCAL_SHARED_LIBRARIES := \
+	libutils liblog libcutils
+
+# No static libraries.
+LOCAL_STATIC_LIBRARIES :=
+
+# Also need the JNI headers.
+LOCAL_C_INCLUDES += \
+	$(JNI_H_INCLUDE)
+
+# No special compiler flags.
+LOCAL_CFLAGS +=
 
 include $(BUILD_SHARED_LIBRARY)

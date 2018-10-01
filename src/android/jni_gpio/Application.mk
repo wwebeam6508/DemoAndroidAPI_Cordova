@@ -1,0 +1,2 @@
+APP_ALLOW_MISSING_DEPS=true
+APP_PLATFORM := android-8
