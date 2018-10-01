@@ -34,5 +34,7 @@
       <source-file src="src/android/libs/armeabi-v7a/libserial_jni.so" target-dir="libs/armeabi-v7a" />
       <!-- obj -->
       <source-file src="src/android/obj/local/armeabi-v7a" target-dir="obj/local/armeabi-v7a" />
+      <!-- java -->
+      <source-file src="src/android/com/nativecode/serialport" target-dir="src/com/nativecode/serialport" />
    </platform>
 </plugin>
