@@ -5,14 +5,16 @@
       <clobbers target="NativeConnector" />
    </js-module>
    <platform name="android">
-      <config-file parent="/*" target="res/xml/config.xml">
+      <config-file parent="." target="res/xml/config.xml">
          <feature name="NativeConnector">
             <param name="android-package" value="cordova.plugin.nativeconnector.NativeConnector" />
          </feature>
       </config-file>
-      <config-file parent="/*" target="AndroidManifest.xml" />
+      <config-file parent="." target="AndroidManifest.xml" />
       <source-file src="src/android/NativeConnector.java" target-dir="src/cordova/plugin/nativeconnector/NativeConnector" />
       
+      <source-file src="src/android/jhxd/serial/serialService.java" target-dir="src/com/jhxd/serial" />
+      <source-file src="src/android/wzh/yho_gpio_operate/gpio_info.java" target-dir="src/com/wzh/yho_gpio_operate" />
       <!-- jni_serial -->
       <source-file src="src/android/jni_serial/Android.mk" target-dir="jni_serial" />
       <source-file src="src/android/jni_serial/Application.mk" target-dir="jni_serial" />
