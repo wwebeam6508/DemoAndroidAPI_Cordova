@@ -13,8 +13,6 @@
       <config-file parent="/*" target="AndroidManifest.xml" />
       <source-file src="src/android/NativeConnector.java" target-dir="src/cordova/plugin/nativeconnector/NativeConnector" />
       
-      <!-- jhxd -->
-      <source-file src="src/android/jhxd/serial/serialService.java" target-dir="src/com/jhxd/serial" />
       <!-- jni_serial -->
       <source-file src="src/android/jni_serial/Android.mk" target-dir="jni_serial" />
       <source-file src="src/android/jni_serial/Application.mk" target-dir="jni_serial" />
