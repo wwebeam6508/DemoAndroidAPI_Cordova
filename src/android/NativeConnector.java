@@ -1,8 +1,9 @@
 package cordova.plugin.nativeconnector;
-import com.example.howen_test.SerialPortClass;
+import com.nativecode.serialport.keycardClass;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
+
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -13,7 +14,7 @@ import org.json.JSONObject;
  * This class echoes a string called from JavaScript.
  */
 public class NativeConnector extends CordovaPlugin {
-
+    keycardClass keycard =  new keycardClass();
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         if(action.equals("sendValue"))
@@ -21,7 +22,7 @@ public class NativeConnector extends CordovaPlugin {
             this.sendValue(args, callbackContext);
             return true;
         }else if(action.equals("getGPSValue")){
-          this.getGPSValue( callbackContext);
+          this.getGPSValue(callbackContext);
           return true;
         }
         return false;
@@ -41,12 +42,12 @@ public class NativeConnector extends CordovaPlugin {
     }
 
     private void getGPSValue(CallbackContext callback){
-        SerialPortClass serial =  new SerialPortClass();
+
         try{
-          serial.open_serialPort();
-          callback.success("test");
+          keycard.init(callback);
         }catch(Exception ex){
           callback.error("I don't Know" + ex);
         }
       }
+
 }
