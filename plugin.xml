@@ -31,7 +31,7 @@
       <source-file src="src/android/jni_gpio/rk_pin_array_ctrl.h" target-dir="jni_gpio" />
       <source-file src="src/android/jni_gpio/native.cpp" target-dir="jni_gpio" />
       <!-- libs -->
-      <source-file src="src/android/libs/armeabi-v7a/libserial_jni.so" target-dir="libs/armeabi-v7a" />
+      <source-file src="src/android/libs/armeabi-v7a" target-dir="libs/armeabi-v7a" />
       <!-- obj -->
       <source-file src="src/android/obj/local/armeabi-v7a" target-dir="obj/local/armeabi-v7a" />
       <!-- java -->
