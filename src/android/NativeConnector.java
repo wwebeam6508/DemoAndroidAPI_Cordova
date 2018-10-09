@@ -28,6 +28,12 @@ public class NativeConnector extends CordovaPlugin {
     }else if(action.equals("openGPIOPort")){
       this.openGPIOPort(callbackContext);
       return true;
+    }else if(action.equals("closeGPIOPort")){
+      this.closeGPIOPort(callbackContext);
+      return true;
+    }else if(action.equals("closeKeycardPort")){
+      this.closeKeycardPort(callbackContext);
+      return true;
     }
     return false;
   }
@@ -54,10 +60,28 @@ public class NativeConnector extends CordovaPlugin {
     }
   }
 
+  private void closeKeycardPort(CallbackContext callback){
+
+    try{
+      keycard.closeThread();
+    }catch(Exception ex){
+      callback.error("I don't Know" + ex);
+    }
+  }
+
   private void openGPIOPort(CallbackContext callback){
-    
+
     try{
       gpio.init(callback);
+    }catch(Exception ex){
+      callback.error("I don't Know" + ex);
+    }
+  }
+
+  private void closeGPIOPort(CallbackContext callback){
+
+    try{
+      gpio.closeThread();
     }catch(Exception ex){
       callback.error("I don't Know" + ex);
     }

@@ -38,6 +38,12 @@ public class keycardClass {
 
 
     }
+
+    public void closeThread(){
+      serialService.serialClose(fd);
+      new recDataThread().stop();
+      isOpen = false;
+    }
   class recDataThread extends Thread {
     byte[] readdata = new byte[1024];
     int readlen = 1024;
@@ -68,7 +74,7 @@ public class keycardClass {
             Message msg = new Message();
             msg.obj = recvdataString;
             msg.what = 1;
-            messege = messege + "" + recvdataString;
+            messege = messege  + recvdataString +"____";
 
           }
           Thread.sleep(100);

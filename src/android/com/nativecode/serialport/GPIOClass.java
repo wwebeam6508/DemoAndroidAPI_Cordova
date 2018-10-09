@@ -35,6 +35,12 @@ public class GPIOClass {
 
   }
 
+  public void closeThread(){
+    gpio_info.close_gpio();
+    new gpioThread().stop();
+    isOpen = false;
+  }
+
   class gpioThread extends Thread {
     @Override
     public void run() {
