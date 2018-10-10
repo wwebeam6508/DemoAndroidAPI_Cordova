@@ -1,4 +1,4 @@
-package com.nativecode.serialport.serialport;
+package com.nativecode.serialport;
 
 import android.os.Message;
 import android.util.Log;
