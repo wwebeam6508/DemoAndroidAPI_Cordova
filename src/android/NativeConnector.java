@@ -1,6 +1,6 @@
 package cordova.plugin.nativeconnector;
 import com.nativecode.serialport.keycardClass;
-import com.nativecode.serialport.serialport.GPIOClass;
+import com.nativecode.serialport.GPIOClass;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
 
