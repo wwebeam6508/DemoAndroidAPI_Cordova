@@ -64,6 +64,7 @@ public class NativeConnector extends CordovaPlugin {
 
     try{
       keycard.closeThread();
+
     }catch(Exception ex){
       callback.error("I don't Know" + ex);
     }
@@ -82,6 +83,7 @@ public class NativeConnector extends CordovaPlugin {
 
     try{
       gpio.closeThread();
+      gpio = new GPIOClass();
     }catch(Exception ex){
       callback.error("I don't Know" + ex);
     }

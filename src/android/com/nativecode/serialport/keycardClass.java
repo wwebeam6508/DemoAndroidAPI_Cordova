@@ -1,6 +1,8 @@
 package com.nativecode.serialport;
 
-
+import java.util.Arrays;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import android.os.Bundle;
 import cordova.plugin.nativeconnector.NativeConnector;
 import com.jhxd.serial.serialService;
@@ -15,10 +17,12 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class keycardClass {
+  private int i = 0;
   private int fd = -1;
   private int readsize = 0;
-  public String messege = "";
   private boolean isOpen = false;
+  public String messege = "";
+  private boolean header = false;
   public CallbackContext context;
     public String init(CallbackContext callback){
       context = callback;
@@ -27,7 +31,9 @@ public class keycardClass {
           System.out.println( "can't open /dev/ttyS4 port");
           return "can't open /dev/ttyS4 port";
         }else{
-          new recDataThread().start();
+
+          recDataThread datathread = new recDataThread();
+          datathread.start();
           isOpen = true;
           System.out.println( "can open /dev/ttyS4 port");
           return "can open /dev/ttyS4 port";
@@ -35,21 +41,20 @@ public class keycardClass {
       }else{
         return "";
       }
-
-
     }
 
     public void closeThread(){
-      serialService.serialClose(fd);
-      new recDataThread().stop();
       isOpen = false;
+      fd = -1;
+      serialService.serialClose(fd);
+      context.success("close");
     }
   class recDataThread extends Thread {
     byte[] readdata = new byte[1024];
     int readlen = 1024;
 
     public void run() {
-      while (fd>0) {
+      while (fd > 0) {
         if (fd < 0) {
           System.out.println("------Close Rece Thread------");
           break;
@@ -74,7 +79,33 @@ public class keycardClass {
             Message msg = new Message();
             msg.obj = recvdataString;
             msg.what = 1;
-            messege = messege  + recvdataString +"____";
+            Pattern p = Pattern.compile("^\\s*?\\%.*$");
+            Matcher m = p.matcher(recvdataString);
+            if(m.find() == true){
+              messege = "____" + recvdataString + "____";
+
+            }else{
+                messege = messege + recvdataString + "____";
+                Pattern p1 = Pattern.compile("^[+].*?[?]$");
+                Matcher m1 = p1.matcher(recvdataString);
+
+                if(m1.find() == true){
+
+                  PluginResult result = new PluginResult(PluginResult.Status.OK, messege);
+                  // PluginResult result = new PluginResult(PluginResult.Status.ERROR, "YOUR_ERROR_MESSAGE");
+                  result.setKeepCallback(true);
+                  context.sendPluginResult(result);
+                  messege = "";
+
+                }
+
+            }
+
+
+
+
+
+
 
           }
           Thread.sleep(100);
@@ -85,14 +116,11 @@ public class keycardClass {
           // TODO Auto-generated catch block
           e.printStackTrace();
         }
-        if(messege!=null|messege!=""){
-          PluginResult result = new PluginResult(PluginResult.Status.OK, messege);
-          // PluginResult result = new PluginResult(PluginResult.Status.ERROR, "YOUR_ERROR_MESSAGE");
-          result.setKeepCallback(true);
-          context.sendPluginResult(result);
-        }
+
  // Keep callback
       }
+
+
 
     };
   };
