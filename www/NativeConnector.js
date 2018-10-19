@@ -1,4 +1,4 @@
-cordova.define("cordova-plugin-nativeconnector.NativeConnector", function(require, exports, module) {
+
 var exec = require('cordova/exec');
 
 module.exports.sendValue = function (arg0, success, error) {
@@ -21,4 +21,4 @@ module.exports.closeGPIOPort = function ( success, error) {
     exec(success, error, 'NativeConnector', 'closeGPIOPort', []);
 };
 
-});
+
