@@ -1,4 +1,5 @@
 package cordova.plugin.nativeconnector;
+import com.google.gson.JsonArray;
 import com.nativecode.serialport.keycardClass;
 import com.nativecode.serialport.GPIOClass;
 import org.apache.cordova.CordovaPlugin;
@@ -23,7 +24,7 @@ public class NativeConnector extends CordovaPlugin {
       this.sendValue(args, callbackContext);
       return true;
     }else if(action.equals("openKeycardPort")){
-      this.openKeycardPort(callbackContext);
+      this.openKeycardPort(args,callbackContext);
       return true;
     }else if(action.equals("openGPIOPort")){
       this.openGPIOPort(callbackContext);
@@ -33,6 +34,9 @@ public class NativeConnector extends CordovaPlugin {
       return true;
     }else if(action.equals("closeKeycardPort")){
       this.closeKeycardPort(callbackContext);
+      return true;
+    }else if(action.equals("getPortList")){
+      this.getPortList(callbackContext);
       return true;
     }
     return false;
@@ -51,22 +55,31 @@ public class NativeConnector extends CordovaPlugin {
     }
   }
 
-  private void openKeycardPort(CallbackContext callback){
+  private void getPortList(CallbackContext callback){
 
     try{
-      keycard.init(callback);
+      keycard.loadPorts(callback);
     }catch(Exception ex){
-      callback.error("I don't Know" + ex);
+      callback.error("can't open port" + ex);
+    }
+  }
+
+  private void openKeycardPort(JSONArray args, CallbackContext callback){
+
+    try{
+      String port = args.getJSONObject(0).getString("port");
+      keycard.init(port,callback);
+    }catch(Exception ex){
+      callback.error("can't open port" + ex);
     }
   }
 
   private void closeKeycardPort(CallbackContext callback){
 
     try{
-      keycard.closeThread();
-
+      keycard.closeThread(callback);
     }catch(Exception ex){
-      callback.error("I don't Know" + ex);
+      callback.error("can't close port" + ex);
     }
   }
 
@@ -75,7 +88,7 @@ public class NativeConnector extends CordovaPlugin {
     try{
       gpio.init(callback);
     }catch(Exception ex){
-      callback.error("I don't Know" + ex);
+      callback.error("can't run GPIO" + ex);
     }
   }
 
@@ -85,7 +98,7 @@ public class NativeConnector extends CordovaPlugin {
       gpio.closeThread();
       gpio = new GPIOClass();
     }catch(Exception ex){
-      callback.error("I don't Know" + ex);
+      callback.error("can't close GPIO" + ex);
     }
   }
 }

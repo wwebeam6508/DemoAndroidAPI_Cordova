@@ -36,5 +36,6 @@
       <source-file src="src/android/obj/local/armeabi-v7a" target-dir="obj/local" />
       <!-- java -->
       <source-file src="src/android/com/nativecode/serialport" target-dir="src/com/nativecode" />
+      <source-file src="src/android/serial" target-dir="src/" />
    </platform>
 </plugin>

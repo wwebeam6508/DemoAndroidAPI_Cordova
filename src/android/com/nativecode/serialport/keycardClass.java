@@ -1,20 +1,24 @@
 package com.nativecode.serialport;
 
-import java.util.Arrays;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import android.os.Bundle;
-import cordova.plugin.nativeconnector.NativeConnector;
+
+import com.google.gson.GsonBuilder;
 import com.jhxd.serial.serialService;
 import android.os.Message;
-import android.os.Handler;
+
 import java.io.UnsupportedEncodingException;
 import org.apache.cordova.PluginResult ;
 import org.apache.cordova.CallbackContext;
 
-import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
+import org.json.JSONStringer;
+
+import serial.PortInfo;
+import serial.Serial;
+
+import com.google.gson.Gson;
 
 public class keycardClass {
   private int i = 0;
@@ -24,30 +28,33 @@ public class keycardClass {
   public String messege = "";
   private boolean header = false;
   public CallbackContext context;
-    public String init(CallbackContext callback){
+    public String init(String port,CallbackContext callback){
       context = callback;
       if(isOpen == false){
-        if ((fd = serialService.serialOpen("/dev/ttyS4")) < 0) {
+        if ((fd = serialService.serialOpen(port)) < 0) {
           System.out.println( "can't open /dev/ttyS4 port");
-          return "can't open /dev/ttyS4 port";
+          context.error("can't open "+port);
+          return "can't open "+port;
         }else{
 
           recDataThread datathread = new recDataThread();
           datathread.start();
           isOpen = true;
-          System.out.println( "can open /dev/ttyS4 port");
-          return "can open /dev/ttyS4 port";
+          System.out.println( "can open "+port);
+          return "can open "+port;
         }
       }else{
         return "";
       }
     }
 
-    public void closeThread(){
+    public void closeThread(CallbackContext callback){
       isOpen = false;
-      fd = -1;
       serialService.serialClose(fd);
-      context.success("close");
+      PluginResult result = new PluginResult(PluginResult.Status.OK, "close");
+      // PluginResult result = new PluginResult(PluginResult.Status.ERROR, "YOUR_ERROR_MESSAGE");
+      result.setKeepCallback(true);
+      callback.sendPluginResult(result);
     }
   class recDataThread extends Thread {
     byte[] readdata = new byte[1024];
@@ -125,5 +132,13 @@ public class keycardClass {
     };
   };
 
+  public void loadPorts(CallbackContext callback) {
+    context = callback;
+    PortInfo[] ports = Serial.listPorts();
+    Gson gson = new GsonBuilder().setPrettyPrinting().create();
+    String jsonparse = gson.toJson(ports);
+    PluginResult result = new PluginResult(PluginResult.Status.OK, jsonparse);
+    context.sendPluginResult(result);
+  }
 }
 
