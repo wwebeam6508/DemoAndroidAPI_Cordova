@@ -48,14 +48,7 @@ public class keycardClass {
       }
     }
 
-    public void closeThread(CallbackContext callback){
-      isOpen = false;
-      serialService.serialClose(fd);
-      PluginResult result = new PluginResult(PluginResult.Status.OK, "close");
-      // PluginResult result = new PluginResult(PluginResult.Status.ERROR, "YOUR_ERROR_MESSAGE");
-      result.setKeepCallback(true);
-      callback.sendPluginResult(result);
-    }
+
   class recDataThread extends Thread {
     byte[] readdata = new byte[1024];
     int readlen = 1024;
@@ -68,6 +61,10 @@ public class keycardClass {
         }
 
         try {
+          if(isOpen == false){
+            context.success("close");
+            break;
+          }
           readsize = serialService.serialRead(fd, readdata, readlen);
           if (readsize > 0) {
             System.out.println("------readSize:" + String.valueOf(readsize) + "------");
@@ -131,7 +128,12 @@ public class keycardClass {
 
     };
   };
-
+  public void closeThread(CallbackContext callback){
+    isOpen = false;
+    serialService.serialClose(fd);
+    fd = -1;
+    callback.success("close");
+  }
   public void loadPorts(CallbackContext callback) {
     context = callback;
     PortInfo[] ports = Serial.listPorts();
