@@ -18,8 +18,8 @@ public class GPIOClass {
 
   private JSONArray sender = new JSONArray() ;
 
-  private String[] gpioStrings = {"P3B6","P3B7","P0B6","P5C1","P5C2","P3B3","P3B4","P4D3","P3B5","P0C1","P0C2","P3C1","P7C5","P5C0","P5C3"};
-
+//  private String[] gpioStrings = {"P3B6","P3B7","P0B6","P5C1","P5C2","P3B3","P3B4","P4D3","P3B5","P0C1","P0C2","P3C1","P7C5","P5C0","P5C3"};
+  private String[] gpioStrings = {"P3B5"};
   private String TAG = "gpio";
   private boolean ifdestroy = false;
   private int gpio_value;
@@ -82,7 +82,7 @@ public class GPIOClass {
             i++;
 
 
-            if (15 == i){
+            if (1 == i){
               String stringsender = sender.toString();
               PluginResult result = new PluginResult(PluginResult.Status.OK, stringsender);
               // PluginResult result = new PluginResult(PluginResult.Status.ERROR, "YOUR_ERROR_MESSAGE");
@@ -108,161 +108,7 @@ public class GPIOClass {
         case 0:
           try{
             JSONObject jsonobj = new JSONObject();
-            jsonobj.put("name","OUT1(P3B6)");
-            jsonobj.put("value", msg.obj);
-            sender.put(jsonobj);
-          }catch(Exception ex){
-            System.out.println("error : "+msg.what);
-          }
-          break;
-        case 1:
-
-          try{
-            JSONObject jsonobj = new JSONObject();
-            jsonobj.put("name","P3B7");
-            jsonobj.put("value", msg.obj);
-            sender.put(jsonobj);
-          }catch(Exception ex){
-            System.out.println("error : "+msg.what);
-          }
-          break;
-        case 2:
-
-          try{
-            JSONObject jsonobj = new JSONObject();
-            jsonobj.put("name","P0B6");
-            jsonobj.put("value", msg.obj);
-            sender.put(jsonobj);
-          }catch(Exception ex){
-            System.out.println("error : "+msg.what);
-          }
-          break;
-        case 3:
-
-          try{
-            JSONObject jsonobj = new JSONObject();
-            jsonobj.put("name","P5C1");
-            jsonobj.put("value", msg.obj);
-            sender.put(jsonobj);
-          }catch(Exception ex){
-            System.out.println("error : "+msg.what);
-          }
-          break;
-        case 4:
-
-          try{
-            JSONObject jsonobj = new JSONObject();
-            jsonobj.put("name","P5C2");
-            jsonobj.put("value", msg.obj);
-            sender.put(jsonobj);
-          }catch(Exception ex){
-            System.out.println("error : "+msg.what);
-          }
-          break;
-        case 5:
-
-          try{
-            JSONObject jsonobj = new JSONObject();
-            jsonobj.put("name","P3B3");
-            jsonobj.put("value", msg.obj);
-            sender.put(jsonobj);
-          }catch(Exception ex){
-            System.out.println("error : "+msg.what);
-          }
-          break;
-        case 6:
-
-          try{
-            JSONObject jsonobj = new JSONObject();
-            jsonobj.put("name","P3B4");
-            jsonobj.put("value", msg.obj);
-            sender.put(jsonobj);
-          }catch(Exception ex){
-            System.out.println("error : "+msg.what);
-          }
-          break;
-        case 7:
-
-          try{
-            JSONObject jsonobj = new JSONObject();
-            jsonobj.put("name","P4D3");
-            jsonobj.put("value", msg.obj);
-            sender.put(jsonobj);
-          }catch(Exception ex){
-            System.out.println("error : "+msg.what);
-          }
-          break;
-        case 8:
-
-          try{
-            JSONObject jsonobj = new JSONObject();
             jsonobj.put("name","P3B5");
-            jsonobj.put("value", msg.obj);
-            sender.put(jsonobj);
-          }catch(Exception ex){
-            System.out.println("error : "+msg.what);
-          }
-          break;
-        case 9:
-
-          try{
-            JSONObject jsonobj = new JSONObject();
-            jsonobj.put("name","P0C1");
-            jsonobj.put("value", msg.obj);
-            sender.put(jsonobj);
-          }catch(Exception ex){
-            System.out.println("error : "+msg.what);
-          }
-          break;
-        case 10:
-
-          try{
-            JSONObject jsonobj = new JSONObject();
-            jsonobj.put("name","P0C2");
-            jsonobj.put("value", msg.obj);
-            sender.put(jsonobj);
-          }catch(Exception ex){
-            System.out.println("error : "+msg.what);
-          }
-          break;
-        case 11:
-
-          try{
-            JSONObject jsonobj = new JSONObject();
-            jsonobj.put("name","P3C1");
-            jsonobj.put("value", msg.obj);
-            sender.put(jsonobj);
-          }catch(Exception ex){
-            System.out.println("error : "+msg.what);
-          }
-          break;
-        case 12:
-
-          try{
-            JSONObject jsonobj = new JSONObject();
-            jsonobj.put("name","P7C5");
-            jsonobj.put("value", msg.obj);
-            sender.put(jsonobj);
-          }catch(Exception ex){
-            System.out.println("error : "+msg.what);
-          }
-          break;
-        case 13:
-
-          try{
-            JSONObject jsonobj = new JSONObject();
-            jsonobj.put("name","P5C0");
-            jsonobj.put("value", msg.obj);
-            sender.put(jsonobj);
-          }catch(Exception ex){
-            System.out.println("error : "+msg.what);
-          }
-          break;
-        case 14:
-
-          try{
-            JSONObject jsonobj = new JSONObject();
-            jsonobj.put("name","P5C3");
             jsonobj.put("value", msg.obj);
             sender.put(jsonobj);
           }catch(Exception ex){
@@ -271,6 +117,172 @@ public class GPIOClass {
           break;
         default:
           break;
+//        case 0:
+//          try{
+//            JSONObject jsonobj = new JSONObject();
+//            jsonobj.put("name","OUT1(P3B6)");
+//            jsonobj.put("value", msg.obj);
+//            sender.put(jsonobj);
+//          }catch(Exception ex){
+//            System.out.println("error : "+msg.what);
+//          }
+//          break;
+//        case 1:
+//
+//          try{
+//            JSONObject jsonobj = new JSONObject();
+//            jsonobj.put("name","P3B7");
+//            jsonobj.put("value", msg.obj);
+//            sender.put(jsonobj);
+//          }catch(Exception ex){
+//            System.out.println("error : "+msg.what);
+//          }
+//          break;
+//        case 2:
+//
+//          try{
+//            JSONObject jsonobj = new JSONObject();
+//            jsonobj.put("name","P0B6");
+//            jsonobj.put("value", msg.obj);
+//            sender.put(jsonobj);
+//          }catch(Exception ex){
+//            System.out.println("error : "+msg.what);
+//          }
+//          break;
+//        case 3:
+//
+//          try{
+//            JSONObject jsonobj = new JSONObject();
+//            jsonobj.put("name","P5C1");
+//            jsonobj.put("value", msg.obj);
+//            sender.put(jsonobj);
+//          }catch(Exception ex){
+//            System.out.println("error : "+msg.what);
+//          }
+//          break;
+//        case 4:
+//
+//          try{
+//            JSONObject jsonobj = new JSONObject();
+//            jsonobj.put("name","P5C2");
+//            jsonobj.put("value", msg.obj);
+//            sender.put(jsonobj);
+//          }catch(Exception ex){
+//            System.out.println("error : "+msg.what);
+//          }
+//          break;
+//        case 5:
+//
+//          try{
+//            JSONObject jsonobj = new JSONObject();
+//            jsonobj.put("name","P3B3");
+//            jsonobj.put("value", msg.obj);
+//            sender.put(jsonobj);
+//          }catch(Exception ex){
+//            System.out.println("error : "+msg.what);
+//          }
+//          break;
+//        case 6:
+//
+//          try{
+//            JSONObject jsonobj = new JSONObject();
+//            jsonobj.put("name","P3B4");
+//            jsonobj.put("value", msg.obj);
+//            sender.put(jsonobj);
+//          }catch(Exception ex){
+//            System.out.println("error : "+msg.what);
+//          }
+//          break;
+//        case 7:
+//
+//          try{
+//            JSONObject jsonobj = new JSONObject();
+//            jsonobj.put("name","P4D3");
+//            jsonobj.put("value", msg.obj);
+//            sender.put(jsonobj);
+//          }catch(Exception ex){
+//            System.out.println("error : "+msg.what);
+//          }
+//          break;
+//        case 8:
+//
+//          try{
+//            JSONObject jsonobj = new JSONObject();
+//            jsonobj.put("name","P3B5");
+//            jsonobj.put("value", msg.obj);
+//            sender.put(jsonobj);
+//          }catch(Exception ex){
+//            System.out.println("error : "+msg.what);
+//          }
+//          break;
+//        case 9:
+//
+//          try{
+//            JSONObject jsonobj = new JSONObject();
+//            jsonobj.put("name","P0C1");
+//            jsonobj.put("value", msg.obj);
+//            sender.put(jsonobj);
+//          }catch(Exception ex){
+//            System.out.println("error : "+msg.what);
+//          }
+//          break;
+//        case 10:
+//
+//          try{
+//            JSONObject jsonobj = new JSONObject();
+//            jsonobj.put("name","P0C2");
+//            jsonobj.put("value", msg.obj);
+//            sender.put(jsonobj);
+//          }catch(Exception ex){
+//            System.out.println("error : "+msg.what);
+//          }
+//          break;
+//        case 11:
+//
+//          try{
+//            JSONObject jsonobj = new JSONObject();
+//            jsonobj.put("name","P3C1");
+//            jsonobj.put("value", msg.obj);
+//            sender.put(jsonobj);
+//          }catch(Exception ex){
+//            System.out.println("error : "+msg.what);
+//          }
+//          break;
+//        case 12:
+//
+//          try{
+//            JSONObject jsonobj = new JSONObject();
+//            jsonobj.put("name","P7C5");
+//            jsonobj.put("value", msg.obj);
+//            sender.put(jsonobj);
+//          }catch(Exception ex){
+//            System.out.println("error : "+msg.what);
+//          }
+//          break;
+//        case 13:
+//
+//          try{
+//            JSONObject jsonobj = new JSONObject();
+//            jsonobj.put("name","P5C0");
+//            jsonobj.put("value", msg.obj);
+//            sender.put(jsonobj);
+//          }catch(Exception ex){
+//            System.out.println("error : "+msg.what);
+//          }
+//          break;
+//        case 14:
+//
+//          try{
+//            JSONObject jsonobj = new JSONObject();
+//            jsonobj.put("name","P5C3");
+//            jsonobj.put("value", msg.obj);
+//            sender.put(jsonobj);
+//          }catch(Exception ex){
+//            System.out.println("error : "+msg.what);
+//          }
+//          break;
+//        default:
+//          break;
       }
     };
 
