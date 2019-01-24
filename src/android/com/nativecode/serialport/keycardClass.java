@@ -83,18 +83,27 @@ public class keycardClass {
             Message msg = new Message();
             msg.obj = recvdataString;
             msg.what = 1;
-            Pattern p = Pattern.compile("^\\s*?\\%.*$");
-            Matcher m = p.matcher(recvdataString);
-            if(m.find() == true){
-              messege = "____" + recvdataString + "____";
-
+            Pattern pf = Pattern.compile("^[%].*?( [?])$");
+            Matcher f = pf.matcher(recvdataString);
+            if(f.find() == true){
+              messege = recvdataString;
+              PluginResult result = new PluginResult(PluginResult.Status.OK, messege);
+              // PluginResult result = new PluginResult(PluginResult.Status.ERROR, "YOUR_ERROR_MESSAGE");
+              result.setKeepCallback(true);
+              context.sendPluginResult(result);
+              messege = "";
             }else{
-                messege = messege + recvdataString + "____";
+              Pattern p = Pattern.compile("^\\s*?\\%.*$");
+              Matcher m = p.matcher(recvdataString);
+              if(m.find() == true){
+                messege = recvdataString;
+
+              }else{
+                messege = messege.trim() +recvdataString;
                 Pattern p1 = Pattern.compile("^[+].*?[?]$");
                 Matcher m1 = p1.matcher(recvdataString);
 
                 if(m1.find() == true){
-
                   PluginResult result = new PluginResult(PluginResult.Status.OK, messege);
                   // PluginResult result = new PluginResult(PluginResult.Status.ERROR, "YOUR_ERROR_MESSAGE");
                   result.setKeepCallback(true);
@@ -103,7 +112,9 @@ public class keycardClass {
 
                 }
 
+              }
             }
+
 
 
 
@@ -143,4 +154,3 @@ public class keycardClass {
     context.sendPluginResult(result);
   }
 }
-
