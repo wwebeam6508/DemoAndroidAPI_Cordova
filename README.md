@@ -1,3 +1,6 @@
 # NativeConnector
 
-This Demo Plugin Developed For Xsense Truck
+This Demo API Developed For Xsense Truck
+
+Received Package Card Data from EDC 
+And Received GPS Data
