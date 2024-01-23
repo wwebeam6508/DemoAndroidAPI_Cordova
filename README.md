@@ -2,5 +2,5 @@
 
 This Demo API Developed For Xsense Truck
 
-Received Package Card Data from EDC 
+Received Package Data from EDC 
 And Received GPS Data
